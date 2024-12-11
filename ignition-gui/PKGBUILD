@@ -38,7 +38,9 @@ build() {
   cmake .. -DCMAKE_BUILD_TYPE="Release" \
            -DCMAKE_INSTALL_PREFIX="/usr" \
            -DCMAKE_INSTALL_LIBDIR="lib" \
-           -DBUILD_TESTING=OFF
+           -DBUILD_TESTING=OFF \
+           -DCMAKE_CXX_FLAGS="-DGZ_RENDERING_HAVE_VULKAN" \
+           -DCMAKE_C_FLAGS="-DGZ_RENDERING_HAVE_VULKAN"
 
   make
 }
